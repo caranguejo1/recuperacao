@@ -2,6 +2,7 @@ import cors from "cors";
 import express from "express";
 import banco from "./banco.js";
 import disciplina from "./controller/DisciplinaController.js";
+import academico from "./controller/AcademicoController.js";
 
 try {
     await banco.authenticate();
@@ -24,5 +25,12 @@ app.get('/disciplina/:id', disciplina.selecionar);
 app.post('/disciplina', disciplina.inserir);
 app.put('/disciplina/:id', disciplina.alterar);
 app.delete('/disciplina/:id', disciplina.excluir);
+
+//rotas crud da tabela acadêmico
+app.get('/academico', academico.listar);
+app.get('/academico/:id', academico.selecionar);
+app.post('/academico', academico.inserir);
+app.put('/academico/:id', academico.alterar);
+app.delete('/academico/:id', academico.excluir);
 
 app.listen(4000, () => { console.log(`Servidor rodando.`) });

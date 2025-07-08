@@ -1,9 +1,9 @@
 import { Sequelize } from "sequelize";
 
 //configuração da conexão com o banco de dados
-const sequelize = new Sequelize('a2', 'postgres', 'postgres', {
+const sequelize = new Sequelize('recuperacao', 'postgres', '123', {
     host: 'localhost',
-    port: 5432,
+    port: 5433,
     dialect: 'postgres',
     define: {
         timestamps: false,
